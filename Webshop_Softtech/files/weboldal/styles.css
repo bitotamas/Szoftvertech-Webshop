@@ -1,0 +1,456 @@
+/* Az egész oldalt egy teljes magasságú flexbox-szerkezetre állítjuk */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* A tartalom rugalmasan tölti ki a helyet a lábléc és a fejléc között */
+main {
+    flex: 1;
+    padding: 1rem 2rem;
+}
+
+/* Fejléc stílusa */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo stílusa */
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Navigációs menü */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1.5rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffdd57;
+}
+
+/* Hős szekció */
+.hero {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Általános szövegstílus */
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Termékek szekció */
+.products {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 3px;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Kiugró ajánlatok vagy akciók */
+.highlight {
+    background-color: #e8f5e9;
+    padding: 2rem;
+    border-left: 4px solid #4CAF50;
+    margin: 2rem 0;
+}
+
+.highlight a {
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.highlight a:hover {
+    color: #ff5722;
+}
+
+/* Lábléc */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.about {
+    background-color: #e8f5e9; /* Világos zöldes háttér */
+    border-left: 5px solid #4CAF50; /* Bal oldali kiemelő vonal */
+    padding: 2rem 1.5rem; /* Kényelmes belső margók */
+    margin: 2rem 0; /* Távolság a szomszédos szakaszoktól */
+    border-radius: 5px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a kiemeléshez */
+}
+
+.about h2 {
+    color: #4CAF50; /* Zöld cím szöveg */
+    text-align: center;
+    font-size: 2rem; /* Nagyobb cím méret */
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* Nagybetűs cím */
+    font-weight: bold;
+}
+
+.about p {
+    font-size: 1.1rem; /* Kissé nagyobb szövegméret */
+    line-height: 1.6; /* Könnyebb olvashatóság */
+    color: #555; /* Sötétszürke szöveg */
+    margin-bottom: 1.5rem;
+    text-align: justify; /* Igazított szöveg */
+}
+
+.about ul {
+    list-style: none; /* Alapértelmezett pontok eltávolítása */
+    padding: 0;
+}
+
+.about ul li {
+    position: relative; /* Ikon elhelyezéséhez */
+    padding-left: 2rem; /* Ikon helyének biztosítása */
+    margin-bottom: 1rem;
+    font-size: 1.1rem; /* Azonos szövegméret a bekezdéssel */
+    color: #333; /* Sötét szöveg */
+}
+
+.about ul li::before {
+    content: "✔"; /* Pipa ikon */
+    color: #4CAF50; /* Zöld ikon */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.about ul li:hover {
+    color: #4CAF50; /* Szöveg kiemelése hoverre */
+    transition: color 0.3s ease-in-out;
+}
+
+.about ul li:hover::before {
+    color: #ff5722; /* Pipa színének változása hoverre */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Termékek oldal stílusai */
+.products-intro {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.products-intro h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.products-intro p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.category {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.more-info {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 2rem;
+}
+
+.more-info a {
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.more-info a:hover {
+    color: #ff5722;
+}
+
+/* Akciók oldal stílusai */
+.deals-intro {
+    text-align: center;
+    background-color: #fce4ec; /* Halvány rózsaszín háttér */
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.deals-intro h1 {
+    font-size: 2.5rem;
+    color: #e91e63; /* Élénk rózsaszín cím */
+    margin-bottom: 1rem;
+}
+
+.deals-intro p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.deals-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.deal-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.deal-item h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 0.5rem;
+}
+
+.deal-item .price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.deal-item .sale-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e91e63; /* Kiemelt akciós ár */
+}
+
+.deal-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+/* Kapcsolat oldal stílusai */
+.contact-intro {
+    text-align: center;
+    background-color: #e3f2fd; /* Halvány kék háttér */
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-intro h1 {
+    font-size: 2.5rem;
+    color: #1976d2; /* Kék cím szín */
+    margin-bottom: 1rem;
+}
+
+.contact-intro p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-item h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #1976d2; /* Kék link */
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-item a:hover {
+    color: #ff5722; /* Narancssárga link hoverre */
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.visit-note {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 2rem;
+    font-style: italic;
+}
